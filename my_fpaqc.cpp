@@ -216,7 +216,7 @@ Encoder::Encoder(Mode m, FILE* f): mode(m), archive(f), x(1<<N),
       if(i<=20) {
         int q = i*2+1;
         int qs;
-        for(qs=q; qs<=L; qs<<=1);
+        for(qs=q>>1; qs<=L; qs<<=1);
         int dest1 = DEST_STATE(qs, q);
         int dest2 = DEST_STATE(qs+2, q);
         printf("dest1 = %6x\n", dest1);
